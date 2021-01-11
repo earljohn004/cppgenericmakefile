@@ -2,12 +2,16 @@
 #include <string>
 #include "Model.h"
 
-Model::Model(std::string fname, std::string lname){
-	first_name_ = fname;
-	last_name_ = lname;
+Model::Model(std::string fname, std::string lname) :
+	first_name_(fname),
+	last_name_(lname)
+{
 }
 
-Model::Model(){
+Model::Model() : 
+	first_name_(""),
+	last_name_("")
+{
 }
 
 Model::~Model(){
