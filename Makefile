@@ -17,6 +17,12 @@
 # project name (generate executable with this name)
 TARGET   = TestApplication
 
+# change these to set the proper directories where each files shoould be
+SRCDIR   = src
+OBJDIR   = obj
+BINDIR   = bin
+INCDIR	 = inc
+
 # ---------------------
 # Compiler variables
 
@@ -26,7 +32,8 @@ CC       = g++
 CCVERSION = -std=c++11
 # compiling flags here
 CFLAGS   =	-Wall\
-   			-g
+   			-g\
+			-I$(INCDIR)/
 
 # linking flags here
 LFLAGS   = -Wall\
@@ -34,15 +41,8 @@ LFLAGS   = -Wall\
 # Compiler variables end
 # ---------------------
 
-
-# change these to set the proper directories where each files shoould be
-SRCDIR   = src
-OBJDIR   = obj
-BINDIR   = bin
-
 # add needed libraries
 LIBRARIES := 
-			
 
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
