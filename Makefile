@@ -67,3 +67,7 @@ clean:
 remove: clean
 	@$(rm) $(BINDIR)/$(TARGET)
 	@echo "Executable removed!"
+
+.PHONEY: run
+run:
+	@$(BINDIR)/$(TARGET)
