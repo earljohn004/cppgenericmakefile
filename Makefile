@@ -10,28 +10,30 @@
 #
 #  IMPORTANT VARIABLES and QUICK DEFINITION
 #
-#  TARGET  			change to the project name
-#  LIBRARIES  		add the necessary libraries of the current project
-
-# project name (generate executable with this name)
-#
+#  TARGET  		change to the project name
+#  LIBRARIES  	add the necessary libraries of the current project
 # ------------------------------------------------
 
+# project name (generate executable with this name)
 TARGET   = TestApplication
+
+# ---------------------
+# Compiler variables
 
 CC       = g++
 
 # Change the version
 CCVERSION = -std=c++11
-
 # compiling flags here
 CFLAGS   =	-Wall\
    			-g
 
-# linker
-LINKER   = g++ -o
 # linking flags here
 LFLAGS   = -Wall\
+
+# Compiler variables end
+# ---------------------
+
 
 # change these to set the proper directories where each files shoould be
 SRCDIR   = src
@@ -48,7 +50,7 @@ OBJECTS  := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 rm       = rm -f
 
 $(BINDIR)/$(TARGET): $(OBJECTS)
-	@echo "$(CC) -o $@ $(OBJECTS) $(LIBRARIES)"
+	@echo "$(CC) -o $@ $(OBJECTS) $(LFLAGS) $(LIBRARIES)"
 	@$(CC) -o $@ $(OBJECTS) $(LIBRARIES)
 	@echo -e "\nBuild Success"
 
