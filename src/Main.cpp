@@ -3,6 +3,7 @@
 #include "Model.h"
 #include "Logic.h"
 #include "common_debug.h"
+// #include "unit_test_framework.h"
 
 int main(){
 
@@ -14,9 +15,17 @@ int main(){
 	// std::cout << m->get_last_name() << std::endl;
 	// std::cout << logic->get_sum(1,2) << std::endl;
 	// std::cout << i << std::endl;
-	
-	GEN_DEBUG( i );
-	GEN_DEBUG( m->get_first_name() );
+
+	VAR_LOG( i );
+	VAR_LOG( m->get_first_name() );
+	MESSAGE_LOG("Hello");
 
 	return 0;
 }
+
+// TEST(numbers_equal){
+// 	int spam = 42;
+// 	ASSERT_EQUAL(spam,42);
+// }
+//
+// TEST_MAIN()

@@ -33,7 +33,9 @@ CCVERSION = -std=c++11
 # compiling flags here
 CFLAGS   =	-Wall\
    			-g\
-			-I$(INCDIR)/
+			-I$(INCDIR)/ \
+			-DDEBUG_TOOL
+
 
 # linking flags here
 LFLAGS   = -Wall\
