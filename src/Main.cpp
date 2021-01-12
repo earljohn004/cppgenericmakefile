@@ -3,8 +3,12 @@
 #include "Model.h"
 #include "Logic.h"
 #include "common_debug.h"
-// #include "unit_test_framework.h"
 
+#ifdef TEST_MODE
+#include "unit_test_framework.h"
+#endif
+
+#ifndef TEST_MODE
 int main(){
 
 	Model* m = new Model("Earl John", "Abaquita");
@@ -22,10 +26,13 @@ int main(){
 
 	return 0;
 }
+#endif
 
-// TEST(numbers_equal){
-// 	int spam = 42;
-// 	ASSERT_EQUAL(spam,42);
-// }
-//
-// TEST_MAIN()
+#ifdef TEST_MODE
+ TEST(numbers_equal){
+ 	int spam = 42;
+ 	ASSERT_EQUAL(spam,42);
+ }
+
+ TEST_MAIN()
+#endif

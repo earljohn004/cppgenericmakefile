@@ -12,6 +12,10 @@
 #
 #  TARGET  		change to the project name
 #  LIBRARIES  	add the necessary libraries of the current project
+#
+#  IMPORTANT CLFAGS
+#  -DEBUG_TOOL = when using the defined macro for debugging
+#  -TEST_MODE = when using the unit_framework
 # ------------------------------------------------
 
 # project name (generate executable with this name)
@@ -34,7 +38,8 @@ CCVERSION = -std=c++11
 CFLAGS   =	-Wall\
    			-g\
 			-I$(INCDIR)/ \
-			-DDEBUG_TOOL
+			-DDEBUG_TOOL \
+			-DTEST_MODE
 
 
 # linking flags here
