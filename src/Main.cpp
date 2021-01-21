@@ -27,12 +27,19 @@ int main(){
 	return 0;
 }
 #endif
-
 #ifdef TEST_MODE
+
  TEST(numbers_equal){
- 	int spam = 42;
- 	ASSERT_EQUAL(spam,42);
+	Logic* logic = new Logic();
+ 	ASSERT_EQUAL(3,logic->get_sum(1,2));
+ }
+
+ TEST(random_test){
+	Logic* logic = new Logic();
+ 	ASSERT_EQUAL(29,logic->get_sum(28,1));
+ 	ASSERT_EQUAL(29,logic->get_sum(24,5));
  }
 
  TEST_MAIN()
+
 #endif
