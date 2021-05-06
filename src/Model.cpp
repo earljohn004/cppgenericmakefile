@@ -1,6 +1,6 @@
+#include "Model.h"
 #include <iostream>
 #include <string>
-#include "Model.h"
 
 Model::Model(std::string fname, std::string lname) :
 	first_name_(fname),

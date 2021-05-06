@@ -33,7 +33,7 @@ INCDIR	 = inc
 CC       = g++
 
 # Change the version
-CCVERSION = -std=c++11
+CCVERSION = -std=c++17
 # compiling flags here
 CFLAGS   =	-Wall\
    			-g\

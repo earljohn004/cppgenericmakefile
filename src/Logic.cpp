@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Logic.h"
+#include <iostream>
 
 Logic::Logic(){
 }
