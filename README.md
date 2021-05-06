@@ -1,7 +1,16 @@
 # cppgenericmakefile
-C++ generic makefile for small/medium projects
+C++ Generic Makefile for small/medium projects. Integrated unit_test_framework in sample Main.cpp. 
+To use the unit_test_framework, uncomment TEST_MODE in line 42 of MakeFile
 
-NOTES:
+
+## How to Use
+![make commands](https://s3.gifyu.com/images/make-commands.gif)
+1. ``make``  use this command to compile and link 
+2. ``make clean``  use command to clean object files
+
+
+
+## NOTES:
 IMPORTANT FOLDERS
 1. src - contains all the source code and corresponding header files
 2. inc - contains the common / custom headers (i.e debug headers)
