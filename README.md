@@ -7,7 +7,7 @@ To use the unit_test_framework, uncomment TEST_MODE in line 42 of MakeFile
 ![make commands](https://s3.gifyu.com/images/make-commands.gif)
 1. ``make``  use this command to compile and link 
 2. ``make clean``  use command to clean object files
-
+3. ``make unittest unit=src/Logic.cpp`` use this command to perform unit testing
 
 
 ## NOTES:

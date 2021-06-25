@@ -65,15 +65,39 @@ $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	@$(CC) $(CCVERSION) $(CFLAGS) -c -o $@ $<
 	@echo "generating... $@  $<"
 
+# add 1 argument to unit at make execution
+# make unittest unit=src/logic.cpp
+.PHONEY: unittest
+unittest:
+	$(eval OBJVAR=$(subst cpp,o,$(unit)))
+	$(eval OBJVAR=$(subst src,obj,$(OBJVAR)))
+	$(eval TESTVAR=$(subst src,test,$(unit)))
+	$(eval TESTVAR=$(subst .cpp,_unit_test.cpp,$(TESTVAR)))
+	$(eval TESTVAROBJ=$(subst test/,obj/,$(TESTVAR)))
+	$(eval TESTVAROBJ=$(subst cpp,o,$(TESTVAROBJ)))
+
+
+	@if $(CC) $(CCVERSION) $(CFLAGS) -c -o $(OBJVAR) $(unit); then \
+		echo generating $(OBJVAR) completed; \
+	   	else \
+		echo File does not exist; exit 1;\
+   	fi
+
+	@if $(CC) $(CCVERSION) $(CFLAGS) -I$(SRCDIR) -c -o $(TESTVAROBJ) $(TESTVAR); then \
+		echo generating $(TESTVAROBJ) completed;\
+		else \
+	   	echo [ERROR] create a unit test file.; exit 1;\
+	fi
+
+	@$(CC) -o bin/$@ $(OBJVAR) $(TESTVAROBJ)
+	@$(BINDIR)/$@
+
 .PHONEY: clean
 clean:
 	@$(rm) $(OBJECTS)
+	@$(rm) $(BINDIR)/*
 	@echo "Cleanup complete!"
 
-.PHONEY: remove
-remove: clean
-	@$(rm) $(BINDIR)/$(TARGET)
-	@echo "Executable removed!"
 
 .PHONEY: run
 run:

@@ -26,17 +26,6 @@ int main(){
 #endif
 #ifdef TEST_MODE
 
- TEST(numbers_equal){
-	std::unique_ptr<Logic> logic = std::make_unique<Logic>();
- 	ASSERT_EQUAL(3,logic->get_sum(1,2));
- }
-
- TEST(random_test){
-	std::unique_ptr<Logic> logic = std::make_unique<Logic>();
- 	ASSERT_EQUAL(29,logic->get_sum(28,1));
- 	ASSERT_EQUAL(29,logic->get_sum(24,5));
- }
-
- TEST_MAIN()
+TEST_MAIN()
 
 #endif
